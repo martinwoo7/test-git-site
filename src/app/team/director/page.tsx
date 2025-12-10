@@ -41,7 +41,6 @@ const StyledLink = ({ name, href }: { name: string; href: string }) => (
 );
 
 const DirectorPage = () => {
-  const basepath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <div className="container py-12 max-w-7xl">
       {/* Header */}
@@ -60,7 +59,7 @@ const DirectorPage = () => {
           <div className="sticky top-24">
             <div className="aspect-square relative rounded-lg overflow-hidden bg-muted mb-6 w-full">
               <ExportedImage
-                src={`${basepath}imgs/zulkernine.jpg`}
+                src={`imgs/zulkernine.jpg`}
                 alt={director.full_title}
                 fill
                 className="object-cover"

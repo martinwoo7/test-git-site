@@ -14,15 +14,14 @@ import ExportedImage from "next-image-export-optimizer";
 import { Mail, Globe } from "lucide-react";
 
 const PersonCard = ({ person }: { person: PersonProps }) => {
-  const basepath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <div className="aspect-square relative bg-muted">
         <ExportedImage
           src={
             person.image
-              ? `${basepath}${person.image}`
-              : `${basepath}imgs/people/placeholder.png`
+              ? `${person.image}`
+              : `imgs/people/placeholder.png`
           }
           alt={person.name}
           fill

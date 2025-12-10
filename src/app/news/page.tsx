@@ -31,7 +31,6 @@ const Page = () => {
     return eventDate >= today;
   });
 
-  const basepath = process.env.NEXT_PUBLIC_BASE_PATH || "";
   return (
     <div className="container py-12 max-w-7xl">
       <section className="mb-12">
@@ -55,8 +54,8 @@ const Page = () => {
                 <ExportedImage
                   src={
                     featuredNews[0].image
-                      ? `${basepath}${featuredNews[0].image}`
-                      : `${basepath}imgs/meeting.png`
+                      ? `${featuredNews[0].image}`
+                      : `imgs/meeting.png`
                   }
                   alt={featuredNews[0].title}
                   fill
@@ -95,8 +94,8 @@ const Page = () => {
                       <ExportedImage
                         src={
                           featuredNews[0].image
-                            ? `${basepath}${featuredNews[0].image}`
-                            : `${basepath}imgs/meeting.png`
+                            ? `${featuredNews[0].image}`
+                            : `imgs/meeting.png`
                         }
                         alt={featuredNews[0].title}
                         fill
@@ -118,8 +117,8 @@ const Page = () => {
                     <ExportedImage
                       src={
                         item.image
-                          ? `${basepath}${item.image}`
-                          : `${basepath}imgs/meeting.png`
+                          ? `${item.image}`
+                          : `imgs/meeting.png`
                       }
                       alt={item.title}
                       fill
@@ -159,8 +158,8 @@ const Page = () => {
                           <ExportedImage
                             src={
                               item.image
-                                ? `${basepath}${item.image}`
-                                : `${basepath}imgs/meeting.png`
+                                ? `${item.image}`
+                                : `imgs/meeting.png`
                             }
                             alt={item.title}
                             fill
@@ -244,8 +243,8 @@ const Page = () => {
                   <ExportedImage
                     src={
                       item.image
-                        ? `${basepath}${item.image}`
-                        : `${basepath}imgs/meeting.png`
+                        ? `${item.image}`
+                        : `imgs/meeting.png`
                     }
                     alt={item.title}
                     fill
@@ -282,8 +281,8 @@ const Page = () => {
                         <ExportedImage
                           src={
                             item.image
-                              ? `${basepath}${item.image}`
-                              : `${basepath}imgs/meeting.png`
+                              ? `${item.image}`
+                              : `imgs/meeting.png`
                           }
                           alt={item.title}
                           fill

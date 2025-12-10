@@ -58,7 +58,6 @@ const ClientPage = ({
 }) => {
   const chunkedItems = chunkAlternating(logos);
   const mobileItems = splitIntoTwoRows(logos);
-  const basepath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <div className="flex flex-col w-full">
@@ -71,7 +70,7 @@ const ClientPage = ({
               className="rounded-lg px-4 py-2 space-x-2"
             >
               <ExportedImage
-                src={`${basepath}imgs/queens_logo_cropped.png`}
+                src={`imgs/queens_logo_cropped.png`}
                 alt="Queen's University Logo"
                 width={100}
                 height={50}
@@ -104,7 +103,7 @@ const ClientPage = ({
 
           <div className="relative w-full lg:max-w-xl h-auto aspect-video shadow-xl rounded-md overflow-hidden border border-border/50">
             <ExportedImage
-              src={`${basepath}imgs/queens_university.jpg`}
+              src={`imgs/queens_university.jpg`}
               fill
               alt="Queen's University"
               className="object-cover hover:scale-105 transition-transform duration-700"
@@ -286,7 +285,7 @@ const ClientPage = ({
 
             <div className="relative w-full lg:max-w-xl h-auto aspect-video shadow-lg rounded-lg overflow-hidden">
               <ExportedImage
-                src={`${basepath}imgs/bamlab_people.png`}
+                src={`imgs/bamlab_people.png`}
                 fill
                 alt="BAM Lab Picnic"
                 className="object-cover"
@@ -315,11 +314,7 @@ const ClientPage = ({
               >
                 <div className="relative aspect-16/10 overflow-hidden">
                   <ExportedImage
-                    src={
-                      news.image
-                        ? `${basepath}${news.image}`
-                        : `${basepath}imgs/meeting.png`
-                    }
+                    src={news.image ? `${news.image}` : `imgs/meeting.png`}
                     alt={news.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -462,7 +457,7 @@ const ClientPage = ({
                     return (
                       <div key={i} className="relative size-20 sm:size-30">
                         <ExportedImage
-                          src={`${basepath}${item}`}
+                          src={`${item}`}
                           alt={"Icon"}
                           fill
                           className="object-contain"
@@ -484,7 +479,7 @@ const ClientPage = ({
                   {row.map((item, i) => (
                     <div key={i} className="relative size-32">
                       <ExportedImage
-                        src={`${basepath}${item}`}
+                        src={`${item}`}
                         alt={"Icon"}
                         fill
                         className="object-contain"

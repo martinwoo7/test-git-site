@@ -17,11 +17,9 @@ export default function FileLink({
   trackName,
   className,
 }: FileLinkProps) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
   // If the link starts with '/', prepend the base path.
   // If it's an external link (https://), leave it alone.
-  const finalHref = href.startsWith("/") ? `${basePath}${href}` : href;
+  const finalHref = href.startsWith("/") ? `${href}` : href;
 
   return (
     <Link

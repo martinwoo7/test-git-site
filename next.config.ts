@@ -1,17 +1,9 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
-const repo = "bam-lab";
-const assetPrefix = `/${repo}/`;
-const basePath = `/${repo}`;
-
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export", // <=== enables static exports
   reactStrictMode: true,
-  basePath: basePath,
-  assetPrefix: assetPrefix,
   images: {
     unoptimized: true,
     loader: "custom",
@@ -27,18 +19,6 @@ const nextConfig: NextConfig = {
     nextImageExportOptimizer_exportFolderName: "nextImageExportOptimizer",
     nextImageExportOptimizer_generateAndUseBlurImages: "true",
     nextImageExportOptimizer_remoteImageCacheTTL: "0",
-    NEXT_PUBLIC_BASE_PATH: assetPrefix,
-  },
-  // Add this redirects function
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: basePath, // Must match your basePath
-        basePath: false, // Prevents Next.js from doubling the path
-        permanent: false,
-      },
-    ];
   },
 };
 
